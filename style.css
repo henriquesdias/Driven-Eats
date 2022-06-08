@@ -9,6 +9,7 @@ body{
     flex-direction: column;
     justify-content: center;
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
@@ -47,6 +48,7 @@ main h2{
     width: 172px;
     border-radius: 9px;
     margin-right: 16px;
+    box-shadow: 0 0 10px -4px rgba(0, 0, 0, 0.4);
 }
 .option img{
     margin:  18px 14px 5px 14px;
@@ -70,6 +72,14 @@ main h2{
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     margin-left: 14px;
+    display: flex;
+    align-items: center;
+}
+.icon{
+    color: #32B72F;
+    margin-left: 62px;
+    font-size: 19px;
+    display: none;
 }
 .drink {
     display: flex;
@@ -89,6 +99,7 @@ main h2{
     justify-content: center;
     align-items: center;
     position: fixed;
+    z-index: 1;
     bottom: 0;
     left: 0;
 }
@@ -100,4 +111,7 @@ button{
     color: white;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
+}
+.select-item{
+    border: 2px solid #32B72F;
 }
