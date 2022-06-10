@@ -7,6 +7,7 @@ const options = document.querySelectorAll('.option');
 
 button.disabled = true;
 
+let count = 0;
 
 function selectedFood(iten , num) {
     // if (iten.classList.contains('select-item')) {
@@ -22,6 +23,7 @@ function selectedFood(iten , num) {
     }
     iten.classList.toggle('select-item');
     icon[num].classList.toggle('show-icon');
+    count++;
 }
 
 function selectedDrink(iten, num) {
@@ -31,6 +33,7 @@ function selectedDrink(iten, num) {
     }
     iten.classList.toggle('select-item');
     icon[num].classList.toggle('show-icon');
+    count++;
 }
 function selectedDessert(iten, num) {
     for (let i = 0 ; i < dessert.length ; i++) {
@@ -39,18 +42,18 @@ function selectedDessert(iten, num) {
     }
     iten.classList.toggle('select-item');
     icon[num].classList.toggle('show-icon');
+    count++;
 
-    for (let k = 0 ; k < options.length ; k++) {
-        let j = 0;
-        if (options[k].classList.contains('select-item') === true) {
-            j++;
-        } if ( j === 3) {
-            console.log('qqqqqqqqqqq');
-        }
+    if (count >= 3) {
+        button.innerHTML = 'Fechar pedido';
+        button.classList.add('buttonGreen');
+        button.disabled = false;
     }
-    console.log(k);
+
 }
 
-function complete() {
-    alert('ahuauh');
+function completeOrder() {
+    let textFinal =  encodeURIComponent("Olá, gostaria de fazer o pedido:- Prato: Frango Yin Yang- Bebida: Coquinha Gelada- Sobremesa: PudimTotal: R$ 27.70");
+    const url =  `https://wa.me/?text=${textFinal}`;
+    open(url);
 }
