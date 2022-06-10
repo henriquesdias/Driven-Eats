@@ -113,8 +113,9 @@ span{
     bottom: 0;
     left: 0;
 }
-button{
+.button{
     height: 61px;
+    width: 300px;
     background-color: #CBCBCB;
     border-radius: 50px;
     border: none;
@@ -183,11 +184,28 @@ button{
     margin-top: 15px;
     display: flex;
     flex-direction: column;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+.confirm{
+    background-color: white;
+    border-radius: 50px;
+    border: none;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #50D074;
 }
 .cancel{
-    margin-top: 20px;
+    margin-top: 10px;
     background-color: #50D074;
     color: white;
+    border-radius: 50px;
+    border: none;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 
 @media (max-width: 337px) {
