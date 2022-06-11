@@ -106,7 +106,7 @@ function completeOrder() {
     if (name == '' || name == null ||  address == '' || address == null) {
         alert('Por favor, preencha o seu nome/endereço')
     } else {
-    let textFinal =  encodeURIComponent(`Olá, gostaria de fazer o pedido: -Prato: ${foodDescription}- Bebida: ${drinkDescription}- Sobremesa: ${dessertDescription}: R$ ${priceTotal.toFixed(2)}- Nome: ${name}- Endereço: ${address}`);
+    let textFinal =  encodeURIComponent(`Olá, gostaria de fazer o pedido: \n- Prato : ${foodDescription} \n- Bebida : ${drinkDescription} \n- Sobremesa : ${dessertDescription} \nTotal : R$ ${priceTotal.toFixed(2)} \n\n \nNome : ${name} \nEndereço : ${address}`);
     const url =  `https://wa.me/?text=${textFinal}`;
     open(url);
     }
