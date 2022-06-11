@@ -62,7 +62,7 @@ function selectedDessert(iten, num) {
     } else {
         for (let i = 0 ; i < dessert.length ; i++) {
             dessert[i].classList.remove('select-item');
-            icon[i + 9].classList.remove('show-icon');
+            icon[i + 10].classList.remove('show-icon');
         }
         optionThree = iten.classList.toggle('select-item');
         dessertDescription = iten.querySelector('h3').innerHTML;
