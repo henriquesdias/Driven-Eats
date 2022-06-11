@@ -4,7 +4,7 @@ const drink = document.querySelectorAll('.second-row')
 const dessert = document.querySelectorAll('.third-row')
 const button  = document.querySelector('.button');
 const options = document.querySelectorAll('.option');
-let confirm = document.querySelector('.transparent');
+const confirm = document.querySelector('.transparent');
 
 button.disabled = true;
 
@@ -23,14 +23,12 @@ function selectedFood(iten , num) {
         iten.classList.toggle('select-item');
         icon[num].classList.toggle('show-icon');
         optionOne = undefined;
-        // ------Aqui vc reseta a opção de prato escolhida
     } else {
         for (let i = 0 ; i < food.length ; i++) {
             food[i].classList.remove('select-item');
             icon[i].classList.remove('show-icon');
           
         }
-        // ------Aqui vc adiciona as informações do prato
         optionOne = iten.classList.toggle('select-item');
         foodDescription = iten.querySelector('h3').innerHTML;
         foodPrice = iten.querySelector('span').innerHTML;
@@ -44,13 +42,11 @@ function selectedDrink(iten, num) {
         iten.classList.toggle('select-item');
         icon[num].classList.toggle('show-icon');
         optionTwo = undefined;
-        // ------Aqui vc reseta a opção de prato escolhida
     } else {
         for (let i = 0 ; i < drink.length ; i++) {
             drink[i].classList.remove('select-item');
             icon[i + 5].classList.remove('show-icon');
         }
-        // ------Aqui vc adiciona as informações do prato
         optionTwo = iten.classList.toggle('select-item');
         drinkDescription = iten.querySelector('h3').innerHTML;
         drinkPrice = iten.querySelector('span').innerHTML;
@@ -63,13 +59,11 @@ function selectedDessert(iten, num) {
         iten.classList.toggle('select-item');
         icon[num].classList.toggle('show-icon');
         optionThree = undefined;
-        // ------Aqui vc reseta a opção de prato escolhida
     } else {
         for (let i = 0 ; i < dessert.length ; i++) {
             dessert[i].classList.remove('select-item');
             icon[i + 9].classList.remove('show-icon');
         }
-        // ------Aqui vc adiciona as informações do prato
         optionThree = iten.classList.toggle('select-item');
         dessertDescription = iten.querySelector('h3').innerHTML;
         dessertPrice = iten.querySelector('span').innerHTML;
@@ -109,10 +103,10 @@ function cancelOrder() {
 function completeOrder() {
     let name = prompt('Qual é o seu nome ?');
     let address = prompt('Qual o seu endereço ?');
-    if (name == '' || address == '') {
+    if (name == '' || name == null ||  address == '' || address == null) {
         alert('Por favor, preencha o seu nome/endereço')
     } else {
-    let textFinal =  encodeURIComponent(`Olá, gostaria de fazer o pedido:- Prato: ${foodDescription}- Bebida: ${drinkDescription}- Sobremesa: ${dessertDescription}: R$ ${priceTotal}- Nome: ${name}- Endereço: ${address}`);
+    let textFinal =  encodeURIComponent(`Olá, gostaria de fazer o pedido: -Prato: ${foodDescription}- Bebida: ${drinkDescription}- Sobremesa: ${dessertDescription}: R$ ${priceTotal.toFixed(2)}- Nome: ${name}- Endereço: ${address}`);
     const url =  `https://wa.me/?text=${textFinal}`;
     open(url);
     }
