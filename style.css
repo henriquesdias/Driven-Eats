@@ -41,8 +41,11 @@ main h2{
 .food {
     display: flex;
     overflow-x: scroll;
-    margin-bottom: 27px;
+    margin-bottom: 27px;   
 }
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+    }
 img{
     width: 144px;
     height: 82px;
